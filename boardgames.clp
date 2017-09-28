@@ -11,7 +11,7 @@
 	(game "Small World" "competitive" "Area Control")
 	(game "Splendor" "competitive" "Economic")
 	(game "Star Fluxx" "competitive" "Party Game")
-	(game "Ticket to Ride" "competitive" "Train Barron Simulation")
+	(game "Ticket to Ride" "competitive" "Train Baron Simulation")
 	(game "Shadows over Camelot" "cooperative" "Fantasy/Bluffing")
 	(game "Carcassonne" "competitive" "Tile placement")
 	(game "Pandemic" "cooperative" "Area Control")
@@ -30,8 +30,7 @@
 	(game "Deception: Murder in Hong Kong" "team-based" "Bluffing")
 	(game "Sushi Go!" "competitive" "Card passing/Party")
 	(game "Alien Frontiers" "competitive" "Sci-Fi/Diceroller/Area Control")
-	(game "Clank" "competitive" "Dungeon/Fantasy/Deckbuilder")
-)
+	(game "Clank" "competitive" "Dungeon/Fantasy/Deckbuilder"))
 
 (deffacts PlayerRange
 	(player-range "Arcadia Quest" 2 4)
@@ -65,8 +64,7 @@
 	(player-range "Deception: Murder in Hong Kong" 5 10)
 	(player-range "Sushi Go!" 3 8)
 	(player-range "Alien Frontiers" 2 4)
-	(player-range "Clank" 2 4)
-)
+	(player-range "Clank" 2 4))
 
 (deffacts GameLength
 	(game-length "Arcadia Quest" 60 90)
@@ -100,8 +98,7 @@
 	(game-length "Deception: Murder in Hong Kong" 20 40)
 	(game-length "Sushi Go!" 15 25)
 	(game-length "Alien Frontiers" 60 90)
-	(game-length "Clank" 30 50)
-)
+	(game-length "Clank" 30 50))
 
 ;;
 
@@ -112,8 +109,7 @@
 	(printout t "Please enter the amount of people that you expect to play: ")
 	(bind ?playerCount (read))
 	(assert (player-count ?playerCount))
-	(retract ?i)
-)
+	(retract ?i))
 
 (defrule FilterGamesList
 	(game ?name)
@@ -122,11 +118,9 @@
 	(test (>= ?playerCount ?min))
 	(test (<= ?playerCount ?max))
 	=>
-	(assert (valid-game ?name))
-)
+	(assert (valid-game ?name)))
 
 (defrule DebugPrint
 	(valid-game ?name)
 	=>
-	(printout t "Valid game: " ?name crlf)
-)
+	(printout t "Valid game: " ?name crlf))
