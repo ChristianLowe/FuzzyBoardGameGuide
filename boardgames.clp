@@ -175,7 +175,7 @@
 	(printout t "availability of adult beverages. On a scale from 1 to 10, how focused do you think that" crlf)
 	(printout t "the players in this group will be on the game? ")
 	(bind ?focusLevel (- (* (read) 5) 7))
-	(printout t "New Focus: " ?focusLevel crlf)
+	;(printout t "New Focus: " ?focusLevel crlf)
 	(assert (GameFocus (?focusLevel 0) (?focusLevel 1) (?focusLevel 0)))
 	(printout t crlf)
 	
@@ -199,7 +199,7 @@
 	=>
 	(bind ?t (moment-defuzzify ?name))
 	(assert (hardcore-factor (round ?t)))
-	(printout t "Selection: " (round ?t) crlf)
+	;(printout t "Selection: " (round ?t) crlf)
 	(printout t crlf "Here are some games you might enjoy: " crlf))
 	
 	
