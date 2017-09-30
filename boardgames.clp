@@ -51,8 +51,8 @@
 	(player-range "The Settlers of Catan" 3 6)
 	(player-range "Sheriff of Nottingham" 3 5)
 	(player-range "Small World" 3 5)
-	(player-range "Splendor" 2 4)
 	(player-range "Star Fluxx" 2 6)
+	(player-range "Splendor" 2 4)
 	(player-range "Ticket to Ride" 2 5)
 	(player-range "Shadows over Camelot" 4 7)
 	(player-range "Carcassonne" 2 5)
@@ -200,7 +200,7 @@
 	(bind ?t (moment-defuzzify ?name))
 	(assert (hardcore-factor (round ?t)))
 	(printout t "Selection: " (round ?t) crlf)
-	(printout t "Here are some games you might enjoy: " crlf))
+	(printout t crlf "Here are some games you might enjoy: " crlf))
 	
 	
 (defrule ListWinners
